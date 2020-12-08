@@ -1,0 +1,215 @@
+/*global styling and variables*/
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+:root {
+  --primary-bg: #eee;
+  --primary-fg: #000;
+}
+
+.dark-mode {
+  --primary-bg: #282c35;
+  --primary-fg: #fff;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--primary-bg);
+  color: var(--primary-fg);
+  transition: 500ms;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#dark-mode-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/*header*/
+header {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 30px;
+  h1 {
+    color: var(--primary-fgS);
+    margin-top: 80px;
+    text-align: center;
+  }
+}
+
+/*main section*/
+main {
+  .search_box {
+    height: 50px;
+    background: var(--primary-bg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+    transition: 500ms;
+    padding: 20px 0;
+    h2 {
+      margin-right: 10px;
+      color: var(--primary-fg);
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    form {
+      display: flex;
+      align-items: center;
+    }
+    #search {
+      width: 230px;
+      height: 40px;
+      border: 1px solid var(--primary-bg);
+      color: #282c35;
+      outline: none;
+      border-bottom-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding-left: 15px;
+      transition: all ease-in-out 300ms;
+
+      &:focus {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+  }
+
+  /*div show movie */
+  #main {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .movie_card {
+      position: relative;
+      width: 250px;
+      height: 320px;
+      margin: 19px 15px 25px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 0 6px 0 var(--primary-fg);
+      transition: all ease-in-out 500ms;
+
+      &:hover {
+        margin-top: 10px;
+        box-shadow: 0px 5px 20px 0px var(--primary-fg);
+
+        img {
+          transition: all ease-in-out 500ms;
+          transform: scale(1.5);
+        }
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      h3 {
+        padding: 15px 0;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+        background: var(--primary-bg);
+        color: var(--primary-fg);
+        position: absolute;
+        width: 100%;
+        bottom: -21px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}
+
+/* Form Styling*/
+.wrapper {
+  width: 80%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 30px;
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #332902;
+  }
+
+  .input_field {
+    margin-bottom: 20px;
+    padding: 10px 0;
+  }
+
+  .input_field input[type="text"],
+  textarea {
+    border: none;
+    width: 100%;
+    padding: 10px;
+
+    &:focus {
+      border-bottom: 2px solid #e0e0e0ee;
+      outline: none;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+
+  .btn input[type="submit"] {
+    border: none;
+    margin-top: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    background: var(--primary-bg);
+    color: var(--primary-fg);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #error_message {
+    margin-bottom: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
+}
+
+/*Footer Styling*/
+footer{
+  padding: 20px 0;
+  background: var(--primary-bg);
+  h5{
+    color: var(--primary-fg);
+    text-align: center;
+  }
+}

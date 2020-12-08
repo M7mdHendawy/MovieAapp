@@ -1,0 +1,263 @@
+/*global styling and variables*/
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+:root {
+  --primary-bg: #eee;
+  --primary-fg: #000;
+}
+
+.dark-mode {
+  --primary-bg: #282c35;
+  --primary-fg: #fff;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--primary-bg);
+  color: var(--primary-fg);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#dark-mode-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/*header*/
+header {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0 30px;
+}
+
+header h1 {
+  color: var(--primary-fgS);
+  margin-top: 80px;
+  text-align: center;
+}
+
+/*main section*/
+main {
+  /*div show movie */
+}
+
+main .search_box {
+  height: 50px;
+  background: var(--primary-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid #ccc;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  padding: 20px 0;
+}
+
+main .search_box h2 {
+  margin-right: 10px;
+  color: var(--primary-fg);
+}
+
+@media screen and (max-width: 600px) {
+  main .search_box h2 {
+    display: block;
+  }
+}
+
+main .search_box a {
+  text-decoration: none;
+}
+
+main .search_box form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .search_box #search {
+  width: 230px;
+  height: 40px;
+  border: 1px solid var(--primary-bg);
+  color: #282c35;
+  outline: none;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-left: 15px;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+main .search_box #search:focus {
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+main #main {
+  width: 100%;
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #main .movie_card {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  margin: 19px 15px 25px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 6px 0 var(--primary-fg);
+          box-shadow: 0 0 6px 0 var(--primary-fg);
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
+}
+
+main #main .movie_card:hover {
+  margin-top: 10px;
+  -webkit-box-shadow: 0px 5px 20px 0px var(--primary-fg);
+          box-shadow: 0px 5px 20px 0px var(--primary-fg);
+}
+
+main #main .movie_card:hover img {
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+main #main .movie_card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main #main .movie_card h3 {
+  padding: 15px 0;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  background: var(--primary-bg);
+  color: var(--primary-fg);
+  position: absolute;
+  width: 100%;
+  bottom: -21px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+/* Form Styling*/
+.wrapper {
+  width: 80%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+
+.wrapper .input_field {
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.wrapper .input_field input[type="text"],
+.wrapper textarea {
+  border: none;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper .input_field input[type="text"]:focus,
+.wrapper textarea:focus {
+  border-bottom: 2px solid #e0e0e0ee;
+  outline: none;
+}
+
+.wrapper textarea {
+  resize: none;
+  height: 80px;
+}
+
+.wrapper .btn input[type="submit"] {
+  border: none;
+  margin-top: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  background: var(--primary-bg);
+  color: var(--primary-fg);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.wrapper .btn input[type="submit"]:focus {
+  outline: none;
+}
+
+.wrapper #error_message {
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/*Footer Styling*/
+footer {
+  padding: 20px 0;
+  background: var(--primary-bg);
+}
+
+footer h5 {
+  color: var(--primary-fg);
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
